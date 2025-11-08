@@ -1,7 +1,7 @@
 require('dotenv').config({ path: '../.env.deploy' });
 
 const {
-  DEPLOY_USER, DEPLOY_HOST, DEPLOY_PATH, DEPLOY_REF = 'origin/master',
+  DEPLOY_USER, DEPLOY_HOST, DEPLOY_PATH, DEPLOY_REF, DEPLOY_REPO = 'origin/master',
 } = process.env;
 
 module.exports = {
@@ -22,11 +22,9 @@ module.exports = {
       user: DEPLOY_USER,
       host: DEPLOY_HOST,
       ref: DEPLOY_REF,
-      repo: 'git@github.com:Elayd/nodejs-pm2-deploy.git',
+      repo: DEPLOY_REPO,
       path: DEPLOY_PATH,
-      ssh_options: ['StrictHostKeyChecking=no', 'PasswordAuthentication=no', 'IdentityFile=~/.ssh/keys/private_key'],
-
-      'pre-deploy-local': 'scp -i ~/.ssh/keys/private_key .env $DEPLOY_USER@$DEPLOY_HOST:$DEPLOY_PATH/source/backend/.env',
+      'pre-deploy-local': 'scp .env $DEPLOY_USER@$DEPLOY_HOST:$DEPLOY_PATH/source/backend/.env',
 
       'post-deploy': [
         'cd backend',

@@ -12,6 +12,7 @@ module.exports = {
       ref: DEPLOY_REF,
       repo: 'git@github.com:Elayd/nodejs-pm2-deploy.git',
       path: DEPLOY_PATH,
+      ssh_options: ['StrictHostKeyChecking=no', 'PasswordAuthentication=no', 'IdentityFile=~/.ssh/keys/private_key'],
 
       'post-deploy': [
         'cd frontend',

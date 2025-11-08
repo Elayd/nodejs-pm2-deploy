@@ -24,8 +24,9 @@ module.exports = {
       ref: DEPLOY_REF,
       repo: 'git@github.com:Elayd/nodejs-pm2-deploy.git',
       path: DEPLOY_PATH,
+      ssh_options: ['StrictHostKeyChecking=no', 'PasswordAuthentication=no', 'IdentityFile=~/.ssh/keys/private_key'],
 
-      'pre-deploy-local': 'scp ./backend/.env $DEPLOY_USER@$DEPLOY_HOST:$DEPLOY_PATH/shared/backend/.env',
+      'pre-deploy-local': 'scp -i ~/.ssh/keys/private_key ./backend/.env $DEPLOY_USER@$DEPLOY_HOST:$DEPLOY_PATH/shared/backend/.env',
 
       'post-deploy': [
         'cd backend',

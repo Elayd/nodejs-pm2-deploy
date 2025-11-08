@@ -31,7 +31,7 @@ module.exports = {
       'post-deploy': [
         'cd backend',
 
-        'npm ci',
+        'npm install',
 
         'npm run build',
 

@@ -1,7 +1,10 @@
-# Деплой приложения на сервер с использованием pm2
+# 🚀 Деплой приложения на сервер с использованием PM2
 
-IP адрес: `84.252.135.230`
+**IP-адрес сервера:**  
+`84.252.135.230`
 
-Frontend: `https://dsakulin.nomorepartiessbs.ru`
+**Frontend:**  
+[https://dsakulin.nomorepartiessbs.ru](https://dsakulin.nomorepartiessbs.ru)
 
-Backend: `https://api.dsakulin.nomorepartiessbs.ru`
+**Backend:**  
+[https://api.dsakulin.nomorepartiessbs.ru](https://api.dsakulin.nomorepartiessbs.ru)
